@@ -81,9 +81,14 @@ function App() {
   }
   })
  
- 
+ if(isLoading) { 
   return (
-    isLoading ? 'Loading...' :
+    <div className="loader"><div className="lds-heart"><div></div></div>
+    <div className="loader-text">Loading...</div>
+    </div>
+  )
+ } else {
+  return (
     <div className="App" id="container">
       <div id="mobile-menu-container">
           <button onClick={() => showMobileMenu(!mobileMenu)} className="open-menu">
@@ -214,6 +219,9 @@ function App() {
       </div>
     </div>
   );
+  }
 }
+
+
  
 export default App;
